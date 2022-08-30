@@ -24,7 +24,7 @@ jobs:
           replace: ${{ github.repository }}
 
       - name: Rename source code directory to repository name
-        run: mv ../ml-template ../{{ github.repository }}
+        run: mv ../ml-template ../${{ github.repository }}
 
       # GitHub Action marketplace: https://github.com/marketplace/actions/git-auto-commit
       - name: Commit all changes
