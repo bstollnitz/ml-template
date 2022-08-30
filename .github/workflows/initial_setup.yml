@@ -21,10 +21,10 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: "[GITHUB_REPOSITORY]"
-          replace: ${{ github.repository }}
+          replace: ${{ github.repository.name }}
 
       - name: Rename source code directory to repository name
-        run: mv ml-template ${{ github.repository }}
+        run: mv ml-template ${{ github.repository.name }}
 
       # GitHub Action marketplace: https://github.com/marketplace/actions/git-auto-commit
       - name: Commit all changes
