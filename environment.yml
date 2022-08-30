@@ -1,0 +1,11 @@
+name: [GITHUB_REPOSITORY]
+channels:
+  - anaconda
+  - pytorch
+  - conda-forge
+dependencies:
+  - python==3.10.4
+  - pytorch==1.11.0
+  - yapf==0.31.0
+  - pylint==2.12.2
+  - mypy==0.910
