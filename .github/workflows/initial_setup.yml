@@ -22,6 +22,7 @@ jobs:
         with:
           find: "[GITHUB_REPOSITORY]"
           replace: ${{ github.event.repository.name }}
+          exclude: "{.git,.github}/**"
 
       - name: Rename source code directory to repository name
         run: mv ml-template ${{ github.event.repository.name }}
@@ -32,6 +33,3 @@ jobs:
         with:
           commit_message: Initial repo setup
           commit_options: "--no-verify --signoff"
-
-      - name: Delete this file
-        run: rm -f .github/workflows/initial_setup.yml
