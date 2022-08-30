@@ -1,4 +1,4 @@
-name: [GITHUB_REPOSITORY]
+name: <GITHUB_REPOSITORY>
 channels:
   - anaconda
   - pytorch

@@ -20,7 +20,7 @@ jobs:
       - name: Replace token with repository name
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "[GITHUB_REPOSITORY]"
+          find: "<GITHUB_REPOSITORY>"
           replace: ${{ github.event.repository.name }}
           exclude: "{.git,.github}/**"
 
