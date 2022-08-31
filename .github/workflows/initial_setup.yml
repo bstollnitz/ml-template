@@ -3,13 +3,13 @@
 
 name: Initial Setup
 
+env:
+  REPO_NAME: ${{ github.event.repository.name }}
+
 on:
   push:
     branches:
       - main
-
-env:
-  REPO_NAME: ${{ github.event.repository.name }}
 
 jobs:
   initial_setup:
