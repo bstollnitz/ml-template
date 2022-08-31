@@ -8,24 +8,27 @@ on:
     branches:
       - main
 
+env:
+  REPO_NAME: ${{ github.event.repository.name }}
+
 jobs:
   initial_setup:
     runs-on: ubuntu-latest
     if: ${{ github.event.created }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # GitHub Action marketplace: https://github.com/marketplace/actions/find-and-replace
       - name: Replace token with repository name
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: "<GITHUB_REPOSITORY>"
-          replace: ${{ github.event.repository.name }}
+          replace: $REPO_NAME
           exclude: "{.git,.github}/**"
 
       - name: Rename source code directory to repository name
-        run: mv ml-template ${{ github.event.repository.name }}
+        run: mv ml-template $REPO_NAME
 
       # GitHub Action marketplace: https://github.com/marketplace/actions/git-auto-commit
       - name: Commit all changes
