@@ -24,7 +24,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: "<GITHUB_REPOSITORY>"
-          replace: $REPO_NAME
+          replace: ${{ env.REPO_NAME }}
           exclude: "{.git,.github}/**"
 
       - name: Rename source code directory to repository name
